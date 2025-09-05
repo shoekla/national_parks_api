@@ -14,18 +14,22 @@ national_parks_api_key: "YOUR_API_KEY_HERE"
 ```
 Next we need to setup our database. Run the following to create and migrate the local database.
 ```
-bin/rails db:create
-bin/rails db:migrate
+rails db:create
+rails db:migrate
 ```
 Finally we need to seed our database and fill in data from the national parks api. The `db/seeds.rb` file calls the paginated api and retrieves all parks and alerts records from the api and creates the records/associations in our local database. To populate, run the following:
 ```
-bin/rails db:seed
+rails db:seed
 ```
 Now you should be setup to run the server and start making requests. You can open the rails console and check that the Park and Alert tables have been populated by running:
 ```
 rails c
     >Park.count
     >Alert.count
+```
+You can start the server to start making request by running:
+```
+rails s
 ```
 ## Running Automated Spec Tests
 I have also included specs for the Park and Alert models, as well as the Park, Alert, and Stat controllers.
